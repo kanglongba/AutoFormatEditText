@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="FormatAutoCompleteTextView">
+        <!-- 暂时只支持一个字符。只有设置了分隔符，自动格式化功能才有效 -->
+        <attr name="splitCharacter" format="string" />
+        <!-- 分隔的单位。默认每四个插入一个分隔符-->
+        <attr name="splitUnit" format="integer" />
+        <!-- 是否显示自动清除图标。-->
+        <attr name="showClearIcon" format="boolean" />
+        <!-- 通过 android:drawableRight 属性设置清除图标。如果不设置，将使用
+        默认的。也就是说一键清除图标，占用的是drawableRight的位置。使用了这个功
+        能，原来的drawableRight就失效了。这点需要注意。-->
+    </declare-styleable>
+</resources>

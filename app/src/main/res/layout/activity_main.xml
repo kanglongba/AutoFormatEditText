@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.bupt.edison.autocompletetextviewandpopwindow.MainActivity"
+    android:padding="15dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:text="卡号："
+        android:id="@+id/cardNo"
+        android:textSize="17sp"
+        android:gravity="center_vertical"/>
+
+    <com.bupt.edison.autocompletetextviewandpopwindow.FormatAutoCompleteTextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Hello World!"
+        android:id="@+id/typeText"
+        android:layout_marginLeft="60dp"
+        android:inputType="number"
+        app:splitCharacter=" "
+        app:splitUnit="4"
+        app:showClearIcon="true"
+        android:drawableRight="@drawable/icon_edittext_delete"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="播放铃声"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/typeText"
+        android:id="@+id/play"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="停止播放"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/play"
+        android:id="@+id/stop"/>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/stop"
+        android:hint="测试失焦"
+        android:id="@+id/oldEdit"
+        android:layout_marginTop="20dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试读取文本"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/oldEdit"
+        android:id="@+id/readText"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="测试设置文本"
+        android:layout_marginTop="20dp"
+        android:layout_below="@id/readText"
+        android:id="@+id/putText"/>
+</RelativeLayout>

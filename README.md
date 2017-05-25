@@ -24,7 +24,7 @@
 * 一键清除功能
 
   一键清除功能，利用了 ***android:drawableRight*** 属性，通过它设置清除图标。  
-  通过 ***app:showClearIcon*** 属性，开启一键清除功能。如果没有通过它显示开启，即使设置了***android:drawableRight***，也不会有任何显示。
+  通过 ***app:showClearIcon*** 属性，开启一键清除功能。如果没有通过它显示开启，即使设置了 ***android:drawableRight*** ，也不会有任何显示。
   
 更详细的使用方法，可以参考本工程的示例代码。
 

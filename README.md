@@ -1,12 +1,12 @@
 # Android - a powerful EditText that can auto format input text  
 
 ## 效果图
-每四位插入一个分隔符，补全提示，一键清除。
+强大的输入控件，每四位插入一个分隔符，补全提示，一键清除。
  
 ![](https://github.com/kanglongba/AutoFormatEditText/blob/master/screenshot/autoformatedittext.gif)
 
 ## 简介
-控件继承自AutoCompleteTextView，本质上是一个EditText。它具有如下功能：  
+FormatAutoCompleteTextView控件继承自AutoCompleteTextView，本质上是一个EditText。它具有如下功能：  
 
 * 自动格式化输入文本  
 * 提示自动补全列表

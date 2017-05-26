@@ -3,6 +3,7 @@ package com.bupt.edison.autocompletetextviewandpopwindow;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.drawable.Drawable;
+import android.os.Build;
 import android.support.v7.widget.AppCompatAutoCompleteTextView;
 import android.text.Editable;
 import android.text.TextUtils;
@@ -118,7 +119,11 @@ public class FormatAutoCompleteTextView extends AppCompatAutoCompleteTextView {
         if (isAutoShowCloseIcon) {
             clearIcon = getCompoundDrawables()[2];
             if (null == clearIcon) {
-                clearIcon = getResources().getDrawable(R.drawable.icon_edittext_delete,context.getTheme());
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                    clearIcon = getResources().getDrawable(R.drawable.icon_edittext_delete, context.getTheme());
+                } else {
+                    clearIcon = getResources().getDrawable(R.drawable.icon_edittext_delete);
+                }
             }
             clearIcon.setBounds(0,0, clearIcon.getIntrinsicWidth(), clearIcon.getIntrinsicHeight());
             setOnFocusChangeListener(new ShowIconFocusChangeListener());

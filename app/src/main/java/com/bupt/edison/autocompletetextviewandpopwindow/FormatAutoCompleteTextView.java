@@ -171,10 +171,9 @@ public class FormatAutoCompleteTextView extends AppCompatAutoCompleteTextView {
                         setSelection(preSelectedIndex - 1); //可以把步进换成splitChar的长度，这样就可以使用双分隔符(或者更多)。
                     } else {
                         try {
-                            setSelection(preSelectedIndex); //开启自动格式化功能后，在文本末尾键入回车或空格时，会崩溃。
+                            setSelection(preSelectedIndex); //开启自动格式化功能后，在文本末尾键入回车或空格时，会崩溃。因为，格式化文本的时候，会把末尾的空格、回车都删掉，这样下标就比字符大一个值，会产生数组越界的异常。
                         } catch (IndexOutOfBoundsException e) {
                             e.printStackTrace();
-                        } finally {
                             setSelection(getText().length());
                         }
                     }

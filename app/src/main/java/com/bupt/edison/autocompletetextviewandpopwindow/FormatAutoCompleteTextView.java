@@ -161,7 +161,11 @@ public class FormatAutoCompleteTextView extends AppCompatAutoCompleteTextView {
                 setText(formatCS);
                 isInput = curLength > preLength;
                 if (isInput) { //输入字符
-                    if (preSelectedIndex>= lengthUnit && (sc-1)%lengthUnit == 0) {
+                    boolean isAfterSplitChar = false; //排除在分隔符后面插入字符的情况
+                    if (preSelectedIndex>=2) {
+                        isAfterSplitChar = splitChar.contains(String.valueOf(formatCS.charAt(preSelectedIndex - 2)));
+                    }
+                    if (preSelectedIndex>= lengthUnit && (sc-1)%lengthUnit == 0 && !isAfterSplitChar) {
                         setSelection(preSelectedIndex + 1); //可以把步进换成splitChar的长度，这样就可以使用双分隔符(或者更多)。
                     } else {
                         setSelection(preSelectedIndex);

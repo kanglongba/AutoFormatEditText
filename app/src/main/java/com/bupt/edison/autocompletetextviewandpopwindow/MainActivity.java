@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
     ArrayList<BankCardModel> models;
+    BankCardFilterAdapter adapter;
 
     //自定义AutoCompleteTextView - ，功能强大。详见 FormatAutoCompleteTextView
     private void powerfulAutoCompleteTextView() {
@@ -87,7 +88,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         models.add(model4);
         models.add(model5);
 
-        BankCardFilterAdapter adapter = new BankCardFilterAdapter(MainActivity.this, models);
+        adapter = new BankCardFilterAdapter(MainActivity.this, models);
         adapter.setFormatAutoCompleteTextView(typeText);
         typeText.setAdapter(adapter); //如果不设置adapter，不会有自动补全功能。
         typeText.setThreshold(1);
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        typeText.setContentText(models.get(position).getBankCardNo());
+        typeText.setContentText(adapter.getItem(position).getBankCardNo());
     }
 
     @Override

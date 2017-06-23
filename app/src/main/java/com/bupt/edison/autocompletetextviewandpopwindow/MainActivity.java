@@ -107,6 +107,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        //由于有过滤规则，需要使用adapter获得BankCardModel
         typeText.setContentText(adapter.getItem(position).getBankCardNo());
     }
 
